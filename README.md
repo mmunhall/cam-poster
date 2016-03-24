@@ -32,17 +32,24 @@ Contains the Node.js application.
 Setup
 -----
 
+Much of this setup requires some Linux chops. You will need to install Node.js, know when and how to use `sudo` when necessary, know how to determine locations to the nodejs executable, how to copy and edit files on the filesystem, etc.
+
 1) Clone or copy the project to the Raspberry Pi.
 
-2) Make a copy of `config/sample.json`. Save the file to an appropriate location. Update the configuration file with values for your envirnoment.
+2) Make a copy of `config/sample.json`. Save the file to an appropriate location. Update the configuration file with values for your environment.
 
 3) Make a copy of `/init.d/cam-poster`. Save the file to `/etc/init.d/`.
 
-4) Update the `PATH`, `NODE_PATH` and `HOME` variables in your new copy of `cam-poster`.
+4) Update the `PATH`, `NODE_PATH` and `HOME` variables in your new copy of `cam-poster`, and update the paths in the start and stop blocks.
 
-5) sudo npm install forever@0.15.1
-	sudo npm install -g nconf...
-	sudo npm install -g jsftp
+5) Install the init script with `sudo update-rc.d cam-poster defaults`.
 
+6) Install Node script dependencies.
 
-If everything is working, monitor log at .forever...
+	node install -g jsftp@1.5.3
+	node install -g forever@0.15.1
+	node install -g nconf@0.8.4
+
+If the setup is correct, the applciation will start at boot. A photo will be captured, stored on the local filesystem and then uploaded to the remote server via FTP. The process will then be scheduled to start over in 60 seconds. Only the last ten images are saved.
+
+To debug, view the forever log file. It is stored in `HOME/.forever`, where `HOME` is the directory specified in the `cam-poster` script.
