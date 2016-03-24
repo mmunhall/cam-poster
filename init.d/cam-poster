@@ -22,11 +22,11 @@ export HOME=/home/pi
 case "$1" in
   start)
     echo "Starting cam-poster"
-    forever start /home/pi/cam-poster/poster.js path/to/config.json
+    forever start /path/to/poster.js path/to/config.json
     ;;
   stop)
     echo "Stopping cam-poster"
-    forever stop /home/pi/cam-poster/poster.js
+    forever stop /path/to/poster.js
     ;;
   *)
     echo "Usage: /etc/init.d/cam-poster {start|stop}"
