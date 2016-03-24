@@ -1,0 +1,36 @@
+#! /bin/sh
+# /etc/init.d/cam-poster
+
+### BEGIN INIT INFO
+# Provides:          cam-poster
+# Required-Start:    
+# Required-Stop:     
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: cam-poster
+# Description:       cam-poster daemon
+### END INIT INFO
+
+export PATH=$PATH:/usr/bin/node
+export NODE_PATH=$NODE_PATH:/usr/lib/node_modules
+export HOME=/home/pi
+
+# npm install -g jsftp@1.5.3
+# npm install -g nconf@0.8.4
+
+case "$1" in
+  start)
+    echo "Starting cam-poster"
+    forever start /home/pi/cam-poster/poster.js path/to/config.json
+    ;;
+  stop)
+    echo "Stopping cam-poster"
+    forever stop /home/pi/cam-poster/poster.js
+    ;;
+  *)
+    echo "Usage: /etc/init.d/cam-poster {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0

@@ -1,0 +1,13 @@
+{
+	"ftp": {
+		"host": "localhost",
+		"port": 21,
+		"username": "username",
+		"password": "aardvark",
+		"directory": "./",
+		"debug": false
+	},
+	"localImages": {
+		"directory": "../images"
+	}
+}

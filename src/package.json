@@ -1,0 +1,20 @@
+{
+  "name": "cam-poster",
+  "version": "1.0.0",
+  "description": "Brute script for Raspberry Pi to snap photo and post via ftp.",
+  "main": "poster.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "jsftp": "1.5.3",
+    "nconf": "0.8.4"
+  },
+  "keywords": [
+    "raspberry pi",
+    "post",
+    "ftp"
+  ],
+  "author": "Mike Munhall",
+  "license": "MIT"
+}
