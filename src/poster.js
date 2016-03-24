@@ -17,7 +17,7 @@ function configure() {
 	file = process.argv[2];
 	if (!fs.existsSync(file)) {
 		console.log("Configuration file does not exist.");
-		process.exit;	
+		process.exit;
 	}
 	nconf.use('memory');
 	nconf.file({ file: process.argv[2] });
@@ -32,7 +32,7 @@ function init() {
 function makeDirectory() {
 	console.log('makeDirectory');
 	if (!fs.existsSync(nconf.get("localImages:directory"))) {
-	    fs.mkdirSync("localImages:directory");
+	    fs.mkdirSync(nconf.get("localImages:directory"));
 	}
 }
 
