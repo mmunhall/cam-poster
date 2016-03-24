@@ -94,5 +94,5 @@ function getImageName() {
 }
 
 function getImageLocalPath() {
-	return "imgs/" + getImageName();
+	return nconf.get("localImages:directory") + getImageName();
 }
