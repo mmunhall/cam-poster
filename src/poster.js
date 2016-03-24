@@ -67,7 +67,7 @@ function put() {
 	  console.log(JSON.stringify(data, null, 2));
 	});
 	
-	ftp.put(getImageLocalPath(), nconfg.get("ftp:directory") + getImageName(), function(err) {
+	ftp.put(getImageLocalPath(), nconf.get("ftp:directory") + getImageName(), function(err) {
 		if (err) {
 			// TODO: Recover
 			console.log("put err: " + err);
