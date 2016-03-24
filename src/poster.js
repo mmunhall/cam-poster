@@ -32,7 +32,7 @@ function init() {
 function makeDirectory() {
 	console.log('makeDirectory');
 	if (!fs.existsSync(nconf.get("localImages:directory"))) {
-	    fs.mkdirSync("imgs");
+	    fs.mkdirSync("localImages:directory");
 	}
 }
 

@@ -15,6 +15,7 @@ export PATH=$PATH:/usr/bin/node
 export NODE_PATH=$NODE_PATH:/usr/lib/node_modules
 export HOME=/home/pi
 
+# TODO: Check if modules exist and if not, install
 # npm install -g jsftp@1.5.3
 # npm install -g nconf@0.8.4
 

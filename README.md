@@ -10,6 +10,8 @@ This is the first part of a quick-and-dirty "webcam" project. The other half of 
 
 There is a lot of manual setup, all of which is documented in this README.
 
+Assumes Raspbian
+
 Directory Structure
 -------------------
 
@@ -31,3 +33,14 @@ Contains the Node.js application.
 
 Setup
 -----
+
+1) Clone project
+2) Create config, save to preferred location
+3) Create directory to store images
+4) Update init.d script
+	copy to /etc/init.d
+5) sudo npm install -g nconf...
+	sudo npm install -g jsftp
+
+
+If everything is working, monitor log at .forever...
